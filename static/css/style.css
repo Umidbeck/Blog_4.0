@@ -1,0 +1,20 @@
+.post-image {
+    width: 700px;  /* Rasmning kengligi */
+    height: 550px; /* Rasmning balandligi */
+    object-fit: cover; /* Rasmni to'g'ri sig'dirish */
+    border-radius: 10px; /* Rasm burchaklarini yumshatish */
+}
+
+.post-image_2{
+    width: 730px;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.post-image_3{
+    width: 370px;
+    height: 370px;
+    object-fit: cover;
+    border-radius: 10px;
+}
