@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .comment-box {
+            background: #fff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            display: flex;
+            gap: 15px;
+        }
+        .author-thumb img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .right-content {
+            flex: 1;
+        }
+        .comment-form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <hr>
+
+            <div class="sidebar-item comments">
+                <div class="sidebar-heading">
+                    <h2>{{ comments|length }} Comments</h2>
+                </div>
+                <div class="content">
+                    <ul class="list-unstyled">
+                        {% for comment in comments %}
+                        <li class="comment-box">
+                            <div class="right-content">
+                                <h4>{{ comment.name }} <span class="text-muted">- {{ comment.date }}</span></h4>
+                                <p>{{ comment.text }}</p>
+                            </div>
+                        </li>
+                        {% empty %}
+                        <p>No comments yet. Be the first to comment!</p>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <hr>
+
+            <div class="sidebar-item submit-comment">
+                <div class="sidebar-heading">
+                    <h2>Your Comment</h2>
+                </div>
+                <div class="content">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input name="name" type="text" class="form-control mb-3" placeholder="Your name" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input name="email" type="email" class="form-control mb-3" placeholder="Your email" required>
+                            </div>
+                            <div class="col-12">
+                                <textarea name="text" rows="4" class="form-control mb-3" placeholder="Type your comment" required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary">Submit Comment</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

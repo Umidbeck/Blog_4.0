@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="heading-page header-text">
+      <section class="page-heading">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="text-content">
+                <h4></h4>
+                <h2>{{ post.category}}</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- Banner Ends Here -->
+
+    <br><br><br><br>
+
+
+    <section class="blog-posts grid-system">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="all-blog-posts">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="blog-post">
+                    <div class="blog-thumb">
+                      <img src="{{ post.photo.url }}" alt="{{ post.title }}" class="post-image_2">
+                    </div>
+                    <div class="down-content">
+                      <span>{{ post.category }}</span>
+                      <a href=""><h4>{{ post.title }}</h4></a>
+                      <ul class="post-info">
+                        <li><a href="#">{{ post.admin }}</a></li>
+                        <li><a href="#">{{ post.date|date:"F d, Y" }}</a></li>
+                        <li><a href="#">{{ post.comment_count }}</a></li>
+                      </ul>
+                        <p>{{ post.text | safe }}</p>
+                      <div class="post-options">
+                        <div class="row">
+                          <div class="col-6">
+                            <ul class="post-tags">
+                              <li><i class="fa fa-tags"></i></li>
+                                {% for tag in post.hashtags.all %}
+                              <li><a href="#">{{ tag.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                          </div>
+                          <div class="col-6">
+                            <ul class="post-share">
+                              <li><i class="fa fa-share-alt"></i></li>
+                              <li><a href="#">Facebook</a>,</li>
+                              <li><a href="#"> Twitter</a></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% include 'comment.html' %}
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            {% include 'category_tag.html' %}
+          </div>
+        </div>
+      </div>
+    </section>
+
+{% endblock %}
