@@ -1,3 +1,4 @@
+from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
 from .models import Post, Comment
@@ -66,7 +67,7 @@ class PostDetailView(DetailView):
 class PostCreateView(CreateView):
     model = Post
     template_name = 'post_form.html'
-    fields = ['category', 'title', 'text', 'admin', 'comment_count', 'hashtags', 'photo', ]
+    fields = ['category', 'title', 'text', 'admin', 'hashtags', 'photo', ]
     success_url = reverse_lazy('home')
 
 class PostUpdateView(UpdateView):
@@ -90,4 +91,33 @@ class PostListByHashtag(ListView):
 
     def get_queryset(self):
         return Post.objects.filter(hashtags__id=self.kwargs['pk'])
+
+class SearchView(ListView):
+    model = Post
+    template_name = 'search_result.html'
+    context_object_name = 'posts'
+    ordering = ['-date']
+    paginate_by = 4
+
+    def normalize_query(self, query):
+        # Kiril yozuvini lotin yozuviga o'zgartirish
+        transliteration_map = {
+            'а': 'a', 'б': 'b', 'в': 'v', 'г': 'g', 'д': 'd', 'е': 'e', 'ё': 'yo', 'ж': 'j',
+            'з': 'z', 'и': 'i', 'й': 'y', 'к': 'k', 'л': 'l', 'м': 'm', 'н': 'n', 'о': 'o',
+            'п': 'p', 'р': 'r', 'с': 's', 'т': 't', 'у': 'u', 'ф': 'f', 'х': 'kh', 'ц': 'ts',
+            'ч': 'ch', 'ш': 'sh', 'щ': 'shch', 'ъ': '', 'ы': 'y', 'ь': '', 'э': 'e', 'ю': 'yu', 'я': 'ya',
+        }
+        normalized_query = ''.join(transliteration_map.get(char, char) for char in query)
+        return normalized_query
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            normalized_query = self.normalize_query(query)  # Normalizatsiya qilish
+            # Qidiruvni amalga oshirish
+            return Post.objects.filter(
+                Q(title__icontains=query) |  # Lotin yozuvidagi qidiruv
+                Q(title__icontains=normalized_query)  # Kiril yozuvidagi normalizatsiya qilingan qidiruv
+            )
+        return Post.objects.none()  # Agar qidiruv so'rovi bo'lmasa, bo'sh queryset qaytaring
 

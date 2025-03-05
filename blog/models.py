@@ -3,6 +3,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
 from ckeditor.fields import RichTextField
+from django.utils.translation import gettext_lazy as _
 
 
 # Create your models here.
@@ -20,8 +21,8 @@ class Tag(models.Model):
 
 class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    title = models.CharField(max_length=100)
-    text = RichTextField()
+    title = models.CharField(verbose_name=_("Title"), max_length=100, db_index=True)
+    text = RichTextField(verbose_name=_("Text"))
     admin = models.ForeignKey(User, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     hashtags = models.ManyToManyField(Tag, blank=True, related_name='posts')

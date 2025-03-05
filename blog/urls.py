@@ -16,4 +16,5 @@ urlpatterns = [
 
     path('category/<int:pk>/', PostListByCategory.as_view(), name='category_posts'),
     path('hashtag/<int:pk>/', PostListByHashtag.as_view(), name='hashtag_posts'),
+    path('search/', SearchView.as_view(), name='search'),
 ]
