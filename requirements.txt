@@ -1,0 +1,4 @@
+Django~=5.1.7
+django-modeltranslation~=0.19.12
+pillow~=11.1.0
+django-ckeditor~=6.7.2
