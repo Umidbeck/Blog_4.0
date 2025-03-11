@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'accounts',
     'ckeditor',
     'ckeditor_uploader',
+    'modeltranslation',
 ]
 
 MIDDLEWARE = [
@@ -129,9 +130,10 @@ LANGUAGES = [
     ('en', _('English')),
     ('uz', _('Uzbek')),
 ]
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
 
 LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'local'),
+    os.path.join(BASE_DIR, 'locale'),
 )
 
 
@@ -160,4 +162,3 @@ CKEDITOR_CONFIGS = {
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_RESTRICT_BY_USER = True
-
