@@ -60,7 +60,7 @@
                     </div>
                     <div class="down-content">
                       <span>Lifestyle</span>
-                      <a href="post-details.html"><h4>{{ post.title }}</h4></a>
+                      <a href="{% url 'post_detail' pk=post.pk %}"><h4>{{ post.title }}</h4></a>
                       <ul class="post-info">
                         <li><a href="#">{{ post.admin }}</a></li>
                         <li><a href="#">{{ post.date|date:"F d, Y" }}</a></li>
@@ -73,7 +73,7 @@
                               {% for tag in post.hashtags.all %}
                             <ul class="post-tags">
                               <li><i class="fa fa-tags"></i></li>
-                              <li><a href="#">{{ tag }}</a>,</li>
+                              <li><a href="{% url 'hashtag_posts' tag.id %}">{{ tag }}</a>,</li>
                             </ul>
                                   {% endfor %}
                           </div>

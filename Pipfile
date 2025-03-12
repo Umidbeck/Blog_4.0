@@ -8,6 +8,7 @@ django = "*"
 pillow = "*"
 django-ckeditor = "*"
 django-modeltranslation = "*"
+django-compressor = "*"
 
 [dev-packages]
 

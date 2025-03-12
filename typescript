@@ -1,0 +1,191 @@
+Script started on 2025-03-12 15:43:37+05:00 [TERM="xterm-256color" TTY="/dev/pts/1" COLUMNS="190" LINES="45"]
+[?2004h]0;umid@umid-pc: ~/Documents/Blog_4.0-main[01;32mumid@umid-pc[00m:[01;34m~/Documents/Blog_4.0-main[00m$ python manage.py cop[Kmpress
+[?2004l[31;1mCommandError: Compressor is disabled. Set the COMPRESS_ENABLED setting or use --force to override.
+[0m[?2004h]0;umid@umid-pc: ~/Documents/Blog_4.0-main[01;32mumid@umid-pc[00m:[01;34m~/Documents/Blog_4.0-main[00m$ [7mpython manage.py collectstatic --noinput[27mpython manage.py collectstatic --noinput
+[?2004l
+1417 static files copied to '/home/umid/Documents/Blog_4.0-main/staticfiles'.
+[?2004h]0;umid@umid-pc: ~/Documents/Blog_4.0-main[01;32mumid@umid-pc[00m:[01;34m~/Documents/Blog_4.0-main[00m$ [7mpython manage.py compress --force         [27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython manage.py compress --force         
+[?2004lCompressing... done
+Compressed 2 block(s) from 22 template(s) for 1 context(s).
+[?2004h]0;umid@umid-pc: ~/Documents/Blog_4.0-main[01;32mumid@umid-pc[00m:[01;34m~/Documents/Blog_4.0-main[00m$ python manage.py compress --force         [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kpython manage.py runserver 8003
+[?2004lWatching for file changes with StatReloader
+Performing system checks...
+
+System check identified some issues:
+
+WARNINGS:
+[33;1m?: (ckeditor.W001) django-ckeditor bundles CKEditor 4.22.1 which isn't supported anymore and which does have unfixed security issues, see for example https://ckeditor.com/cke4/release/CKEditor-4.24.0-LTS . You should consider strongly switching to a different editor (maybe CKEditor 5 respectively django-ckeditor-5 after checking whether the CKEditor 5 license terms work for you) or switch to the non-free CKEditor 4 LTS package. See https://ckeditor.com/ckeditor-4-support/ for more on this. (Note! This notice has been added by the django-ckeditor developers and we are not affiliated with CKSource and were not involved in the licensing change, so please refrain from complaining to us. Thanks.)[0m
+
+System check identified 1 issue (0 silenced).
+March 12, 2025 - 10:47:51
+Django version 5.1.7, using settings 'config.settings'
+Starting development server at http://127.0.0.1:8003/
+Quit the server with CONTROL-C.
+
+[12/Mar/2025 10:47:58] [32m"GET / HTTP/1.1" 302 0[0m
+[12/Mar/2025 10:47:58] [m"GET /en/ HTTP/1.1" 200 20247[0m
+[12/Mar/2025 10:47:58] [36m"GET /static/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:47:58] [m"GET /static/CACHE/css/output.7f0cb2e9abde.css HTTP/1.1" 200 43284[0m
+[12/Mar/2025 10:47:58] [m"GET /media/media/photos/2025/03/01/Screenshot_from_2022-03-01_12-49-02.png HTTP/1.1" 200 133503[0m
+[12/Mar/2025 10:47:58] [m"GET /media/media/photos/2025/02/27/Screenshot_from_2022-12-06_16-47-17.png HTTP/1.1" 200 79979[0m
+[12/Mar/2025 10:47:58] [36m"GET /media/media/photos/2025/03/05/Screenshot_from_2022-02-28_21-42-24.png HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:47:58] [m"GET /media/media/photos/2025/02/27/Screenshot_from_2024-10-10_12-46-10.png HTTP/1.1" 200 219277[0m
+[12/Mar/2025 10:47:58] [m"GET /static/CACHE/js/output.f001ec35d2e7.js HTTP/1.1" 200 615187[0m
+[12/Mar/2025 10:47:58] [36m"GET /media/media/photos/2025/03/11/fotolia_8849224_m_news_0.jpg HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:47:58] [36m"GET /media/media/photos/2025/03/11/british-culture-3.jpg HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:47:59] [m"GET /static/assets/fonts/fontawesome-webfont.woff2?v=4.3.0&df609cce2d5b HTTP/1.1" 200 56780[0m
+[12/Mar/2025 10:48:07] [m"GET /en/ HTTP/1.1" 200 20247[0m
+[12/Mar/2025 10:48:07] [36m"GET /static/CACHE/css/output.7f0cb2e9abde.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:48:07] [36m"GET /static/CACHE/js/output.f001ec35d2e7.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:48:08] [m"GET /en/ HTTP/1.1" 200 20247[0m
+[12/Mar/2025 10:48:15] [m"GET /en/blog/ HTTP/1.1" 200 20272[0m
+[12/Mar/2025 10:48:15] [36m"GET /static/CACHE/js/output.f001ec35d2e7.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:48:15] [36m"GET /static/CACHE/css/output.7f0cb2e9abde.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:48:15] [m"GET /media/images/cta-bg.jpg HTTP/1.1" 200 34905[0m
+[12/Mar/2025 10:48:15] [36m"GET /media/images/heading-bg.jpg HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:49:40] [32m"POST /i18n/setlang/ HTTP/1.1" 302 0[0m
+[12/Mar/2025 10:49:40] [m"GET /uz/blog/ HTTP/1.1" 200 20284[0m
+[12/Mar/2025 10:49:40] [36m"GET /static/CACHE/js/output.f001ec35d2e7.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:49:40] [36m"GET /static/CACHE/css/output.7f0cb2e9abde.css HTTP/1.1" 304 0[0m
+Not Found: /uz/blog/post-details.html
+[12/Mar/2025 10:50:02] [33m"GET /uz/blog/post-details.html HTTP/1.1" 404 6714[0m
+Not Found: /uz/blog/post-details.html
+[12/Mar/2025 10:50:07] [33m"GET /uz/blog/post-details.html HTTP/1.1" 404 6714[0m
+[12/Mar/2025 10:50:12] [m"GET /uz/category/1/ HTTP/1.1" 200 10424[0m
+[12/Mar/2025 10:50:12] [36m"GET /static/CACHE/js/output.f001ec35d2e7.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:50:12] [36m"GET /static/CACHE/css/output.7f0cb2e9abde.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:50:12] [36m"GET /media/media/photos/2025/02/26/Screenshot_from_2024-12-16_14-15-07_f4jN0aj.png HTTP/1.1" 304 0[0m
+Not Found: /favicon.ico
+Not Found: /uz/blog/post-details.html
+[12/Mar/2025 10:50:50] [33m"GET /uz/blog/post-details.html HTTP/1.1" 404 6714[0m
+[12/Mar/2025 10:52:14] [m"GET /uz/blog/ HTTP/1.1" 200 20248[0m
+[12/Mar/2025 10:52:14] [m"GET /static/CACHE/css/output.7f0cb2e9abde.css HTTP/1.1" 200 43284[0m
+[12/Mar/2025 10:52:14] [36m"GET /static/CACHE/js/output.f001ec35d2e7.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:52:16] [m"GET /uz/post/7/ HTTP/1.1" 200 16565[0m
+[12/Mar/2025 10:52:24] [m"GET /uz/ HTTP/1.1" 200 20099[0m
+[12/Mar/2025 10:54:31] [m"GET /uz/ HTTP/1.1" 200 20099[0m
+[12/Mar/2025 10:54:31] [36m"GET /static/CACHE/js/output.f001ec35d2e7.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:31] [36m"GET /static/CACHE/css/output.7f0cb2e9abde.css HTTP/1.1" 304 0[0m
+Not Found: /favicon.ico
+[12/Mar/2025 10:54:33] [m"GET /uz/blog/ HTTP/1.1" 200 20352[0m
+[12/Mar/2025 10:54:36] [m"GET /uz/hashtag/2/ HTTP/1.1" 200 19966[0m
+Not Found: /favicon.ico
+[12/Mar/2025 10:54:46] [m"GET /uz/admin/ HTTP/1.1" 200 12511[0m
+[12/Mar/2025 10:54:46] [36m"GET /static/admin/css/base.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:46] [36m"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:46] [36m"GET /static/admin/css/responsive.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:46] [36m"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:46] [36m"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:46] [36m"GET /static/admin/js/theme.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:46] [36m"GET /static/admin/css/dashboard.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:46] [m"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331[0m
+[12/Mar/2025 10:54:46] [m"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392[0m
+[12/Mar/2025 10:54:46] [m"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380[0m
+[12/Mar/2025 10:54:49] [m"GET /uz/admin/blog/post/ HTTP/1.1" 200 14004[0m
+[12/Mar/2025 10:54:49] [36m"GET /static/admin/css/changelists.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:49] [m"GET /static/admin/js/filters.js HTTP/1.1" 200 978[0m
+[12/Mar/2025 10:54:49] [36m"GET /static/admin/js/actions.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:49] [36m"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:49] [36m"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:49] [36m"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:49] [36m"GET /static/admin/js/core.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:49] [36m"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:49] [36m"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:49] [36m"GET /static/admin/js/urlify.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:49] [m"GET /uz/admin/jsi18n/ HTTP/1.1" 200 6253[0m
+Not Found: /favicon.ico
+[12/Mar/2025 10:54:49] [m"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331[0m
+[12/Mar/2025 10:54:55] [m"GET /uz/admin/blog/post/9/change/ HTTP/1.1" 200 22072[0m
+[12/Mar/2025 10:54:55] [m"GET /uz/admin/jsi18n/ HTTP/1.1" 200 6253[0m
+[12/Mar/2025 10:54:55] [m"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581[0m
+[12/Mar/2025 10:54:55] [m"GET /static/admin/css/forms.css HTTP/1.1" 200 8794[0m
+[12/Mar/2025 10:54:55] [m"GET /static/admin/js/change_form.js HTTP/1.1" 200 606[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor/ckeditor.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor-init.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/fixups.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [m"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586[0m
+[12/Mar/2025 10:54:55] [m"GET /static/admin/css/widgets.css HTTP/1.1" 200 11564[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor/config.js?t=N5UC HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor/skins/moono-lisa/editor_gecko.css?t=N5UC HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor/lang/en.js?t=N5UC HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor/styles.js?t=N5UC HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor/plugins/scayt/skins/moono-lisa/scayt.css?t=N5UC HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor/plugins/scayt/dialogs/dialog.css?t=N5UC HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor/plugins/copyformatting/styles/copyformatting.css?t=N5UC HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor/plugins/dialog/styles/dialog.css?t=N5UC HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:55] [36m"GET /static/ckeditor/ckeditor/plugins/tableselection/styles/tableselection.css?t=N5UC HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:54:56] [m"GET /static/ckeditor/ckeditor/skins/moono-lisa/icons.png?t=4a1fb11f44 HTTP/1.1" 200 12237[0m
+[12/Mar/2025 10:54:56] [36m"GET /static/ckeditor/ckeditor/contents.css?t=N5UC HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:55:14] [m"POST /uz/admin/blog/post/9/change/ HTTP/1.1" 200 22285[0m
+[12/Mar/2025 10:55:15] [m"GET /uz/admin/jsi18n/ HTTP/1.1" 200 6253[0m
+Not Found: /favicon.ico
+[12/Mar/2025 10:56:01] [32m"POST /uz/admin/blog/post/9/change/ HTTP/1.1" 302 0[0m
+[12/Mar/2025 10:56:01] [m"GET /uz/admin/blog/post/ HTTP/1.1" 200 14199[0m
+[12/Mar/2025 10:56:01] [m"GET /uz/admin/jsi18n/ HTTP/1.1" 200 6253[0m
+[12/Mar/2025 10:56:01] [m"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436[0m
+[12/Mar/2025 10:56:06] [32m"GET /uz HTTP/1.1" 301 0[0m
+[12/Mar/2025 10:56:06] [36m"GET /static/CACHE/js/output.f001ec35d2e7.js HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:56:07] [36m"GET /static/CACHE/css/output.7f0cb2e9abde.css HTTP/1.1" 304 0[0m
+[12/Mar/2025 10:56:11] [m"GET /uz/ HTTP/1.1" 200 20099[0m
+Not Found: /favicon.ico
+[12/Mar/2025 10:56:33] [32m"POST /i18n/setlang/ HTTP/1.1" 302 0[0m
+[12/Mar/2025 10:56:33] [m"GET /en/ HTTP/1.1" 200 20247[0m
+[12/Mar/2025 10:56:42] [m"GET /en/post/9/ HTTP/1.1" 200 14823[0m
+^Z
+[1]+  Stopped                 python manage.py runserver 8003
+[?2004h]0;umid@umid-pc: ~/Documents/Blog_4.0-main[01;32mumid@umid-pc[00m:[01;34m~/Documents/Blog_4.0-main[00m$ [7mpython manage.py test[27m
+[A[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cpython manage.py test
+[A
+[?2004lFound 3 test(s).
+Creating test database for alias 'default'...
+System check identified some issues:
+
+WARNINGS:
+[33;1m?: (ckeditor.W001) django-ckeditor bundles CKEditor 4.22.1 which isn't supported anymore and which does have unfixed security issues, see for example https://ckeditor.com/cke4/release/CKEditor-4.24.0-LTS . You should consider strongly switching to a different editor (maybe CKEditor 5 respectively django-ckeditor-5 after checking whether the CKEditor 5 license terms work for you) or switch to the non-free CKEditor 4 LTS package. See https://ckeditor.com/ckeditor-4-support/ for more on this. (Note! This notice has been added by the django-ckeditor developers and we are not affiliated with CKSource and were not involved in the licensing change, so please refrain from complaining to us. Thanks.)[0m
+
+System check identified 1 issue (0 silenced).
+...
+----------------------------------------------------------------------
+Ran 3 tests in 2.729s
+
+OK
+Destroying test database for alias 'default'...
+[?2004h]0;umid@umid-pc: ~/Documents/Blog_4.0-main[01;32mumid@umid-pc[00m:[01;34m~/Documents/Blog_4.0-main[00m$ python manage.py testrunserver 8003compress --force         [2Pllectstatic --noinputmpress --force         [11Prunserver 8003test[K[Kpython manage.py test
+[?2004lFound 2 test(s).
+Creating test database for alias 'default'...
+System check identified some issues:
+
+WARNINGS:
+[33;1m?: (ckeditor.W001) django-ckeditor bundles CKEditor 4.22.1 which isn't supported anymore and which does have unfixed security issues, see for example https://ckeditor.com/cke4/release/CKEditor-4.24.0-LTS . You should consider strongly switching to a different editor (maybe CKEditor 5 respectively django-ckeditor-5 after checking whether the CKEditor 5 license terms work for you) or switch to the non-free CKEditor 4 LTS package. See https://ckeditor.com/ckeditor-4-support/ for more on this. (Note! This notice has been added by the django-ckeditor developers and we are not affiliated with CKSource and were not involved in the licensing change, so please refrain from complaining to us. Thanks.)[0m
+
+System check identified 1 issue (0 silenced).
+EE
+======================================================================
+ERROR: test_photo_resizing (blog.tests.PostModelTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/umid/Documents/Blog_4.0-main/blog/tests.py", line 20, in setUp
+    image = Image.new("RGB", (200, 200))
+AttributeError: type object 'Image' has no attribute 'new'
+
+======================================================================
+ERROR: test_slug_generation (blog.tests.PostModelTest)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/umid/Documents/Blog_4.0-main/blog/tests.py", line 20, in setUp
+    image = Image.new("RGB", (200, 200))
+AttributeError: type object 'Image' has no attribute 'new'
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.006s
+
+FAILED (errors=2)
+Destroying test database for alias 'default'...
+[?2004h]0;umid@umid-pc: ~/Documents/Blog_4.0-main[01;32mumid@umid-pc[00m:[01;34m~/Documents/Blog_4.0-main[00m$ python manage.py test
+[?2004lFound 2 test(s).
+Creating test database for alias 'default'...
+System check identified some issues:
+
+WARNINGS:
+[33;1m?: (ckeditor.W001) django-ckeditor bundles CKEditor 4.22.1 which isn't supported anymore and which does have unfixed security issues, see for example https://ckeditor.com/cke4/release/CKEditor-4.24.0-LTS . You should consider strongly switching to a different editor (maybe CKEditor 5 respectively django-ckeditor-5 after checking whether the CKEditor 5 license terms work for you) or switch to the non-free CKEditor 4 LTS package. See https://ckeditor.com/ckeditor-4-support/ for more on this. (Note! This notice has been added by the django-ckeditor developers and we are not affiliated with CKSource and we
