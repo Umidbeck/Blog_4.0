@@ -1,20 +1,25 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect
+from django.utils.decorators import method_decorator
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
 from .models import Post, Comment
 from django.urls import reverse_lazy
 from .forms import  CommentForm
 from django.contrib import messages
+from django.views.decorators.cache import cache_page
 
 
 
 # Create your views here.
-
 class HomeView(ListView):
     model = Post
     template_name = 'index.html'
     context_object_name = 'posts'
     ordering = ['-date']
+
+    @method_decorator(cache_page(60 * 15))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
 
 
