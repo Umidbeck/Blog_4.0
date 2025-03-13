@@ -55,6 +55,15 @@
                               <li><a href="#">{{ tag.name }}</a></li>
                                 {% endfor %}
                             </ul>
+                          {% if request.user.is_staff %}
+                            <a href="{% url 'post_update' post.pk %}" class="btn btn-warning">
+                                <i class="fas fa-edit"></i> O‘zgartirish
+                            </a>
+
+                            <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">
+                                <i class="fas fa-trash"></i> O‘chirish
+                            </a>
+                         {% endif %}
                           </div>
                           <div class="col-6">
                             <ul class="post-share">

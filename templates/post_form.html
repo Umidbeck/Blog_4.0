@@ -3,31 +3,57 @@
 
 {% block content %}
     <br><br><br>
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card shadow-lg p-4">
-                <h2 class="text-center mb-4">Yangi Post Yaratish</h2>
-                <form method="post" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {{ form.media }}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow-lg p-4 border-0 rounded-4" style="background: #f8f9fa;">
+                    <h2 class="text-center mb-4 fw-bold text-primary">📝 Yangi Post Yaratish</h2>
+                    <form method="post" enctype="multipart/form-data" class="p-3">
+                        {% csrf_token %}
+                        {{ form.media }}
 
-                    {% for field in form %}
-                        <div class="mb-3">
-                            <label class="form-label">{{ field.label }}</label>
-                            {{ field }}
-                            {% if field.errors %}
-                                <div class="text-danger">
-                                    {{ field.errors }}
-                                </div>
-                            {% endif %}
-                        </div>
-                    {% endfor %}
+                        {% for field in form %}
+                            <div class="mb-3">
+                                <label class="form-label fw-semibold text-dark">{{ field.label }}</label>
+                                {{ field }}
+                                {% if field.errors %}
+                                    <div class="text-danger small mt-1">
+                                        {{ field.errors }}
+                                    </div>
+                                {% endif %}
+                            </div>
+                        {% endfor %}
 
-                    <button type="submit" class="btn btn-primary w-100">Yaratish</button>
-                </form>
+                        <button type="submit" class="btn btn-gradient w-100 p-2 fs-5">
+                            <i class="fas fa-plus-circle"></i> Yaratish
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
+
+    <style>
+        .btn-gradient {
+            background: linear-gradient(135deg, #007bff, #6610f2);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s ease-in-out;
+        }
+        .btn-gradient:hover {
+            background: linear-gradient(135deg, #6610f2, #007bff);
+            box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.3);
+        }
+        input, textarea, select {
+            border-radius: 8px !important;
+            padding: 10px !important;
+            border: 1px solid #ced4da !important;
+            transition: 0.2s ease-in-out;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #007bff !important;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+        }
+    </style>
 {% endblock %}

@@ -82,25 +82,30 @@ https://templatemo.com/tm-551-stand-blog
                 <a class="nav-link" href="{% url 'contact' %}">{% blocktrans %}Contact Us<{% endblocktrans %}/a>
               </li>
             <li class="nav-item">
-                <form action="{% url 'set_language' %}" method="post">
+                <form action="{% url 'set_language' %}" method="post" class="d-flex align-items-center gap-2">
                     {% csrf_token %}
-                    <select name="language">
-                        <option value="en">English</option>
-                        <option value="uz">O'zbek</option>
+                    <select name="language" class="form-select w-auto">
+                        <option value="en" {% if request.LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
+                        <option value="uz" {% if request.LANGUAGE_CODE == 'uz' %}selected{% endif %}>O'zbek</option>
                     </select>
-                    <button type="submit">Change</button>
+                    <button type="submit" class="btn btn-primary">Change</button>
                 </form>
             </li>
+
                 {% if user.is_authenticated %}
-                <ul>
-                    <li><a href="#">{{ user.username | title }}</a></li>
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                </ul>
+                    <li class="nav-item">
+                        <a class="nav-link fw-bold text-primary" href="#">{{ user.username | title }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-danger px-3 py-1" href="{% url 'logout' %}">Logout</a>
+                    </li>
                 {% else %}
-                <ul>
-                    <li><a href="{% url 'login' %}">Login |</a></li>
-                    <li><a href="{% url 'register' %}">Sign |</a></li>
-                </ul>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary px-3 py-1 me-2" href="{% url 'login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary px-3 py-1" href="{% url 'register' %}">Sign Up</a>
+                    </li>
                 {% endif %}
             </ul>
           </div>

@@ -50,6 +50,12 @@
                         <li><a href="{% url 'hashtag_posts' tag.id %}">{{ tag }}</a></li>
                     </ul>
                     {% endfor %}
+                {% if request.user.is_staff %}
+                    <a href="{% url 'post-create' %}" class="btn btn-warning">
+                        <i class="content"></i> Yangi post yaratish
+                    </a>
+
+                {% endif %}
                 </div>
             </div>
         </div>
