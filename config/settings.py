@@ -122,6 +122,8 @@ CACHES = {
     }
 }
 
+CACHE_MIDDLEWARE_SECONDS = 300
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/

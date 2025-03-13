@@ -1,7 +1,9 @@
+from django.contrib.auth.mixins import UserPassesTestMixin
+from django.core.cache import cache
 from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.utils.decorators import method_decorator
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Comment
 from django.urls import reverse_lazy
 from .forms import  CommentForm
@@ -11,15 +13,14 @@ from django.views.decorators.cache import cache_page
 
 
 # Create your views here.
+@method_decorator(cache_page(60 * 5), name='dispatch')
 class HomeView(ListView):
     model = Post
     template_name = 'index.html'
     context_object_name = 'posts'
     ordering = ['-date']
 
-    @method_decorator(cache_page(60 * 15))
-    def dispatch(self, *args, **kwargs):
-        return super().dispatch(*args, **kwargs)
+
 
 
 
@@ -29,6 +30,7 @@ class AboutView(TemplateView):
 class ContactView(TemplateView):
     template_name = 'contact.html'
 
+@method_decorator(cache_page(60 * 5), name='dispatch')
 class BlogView(ListView):
     model = Post
     template_name = 'blog.html'
@@ -36,7 +38,7 @@ class BlogView(ListView):
     ordering = ['-date']
     paginate_by = 6
 
-
+@method_decorator(cache_page(60 * 5), name='dispatch')
 class PostDetailView(DetailView):
     model = Post
     template_name = 'post-details.html'
@@ -69,18 +71,50 @@ class PostDetailView(DetailView):
 
 
 
-class PostCreateView(CreateView):
+class PostCreateView(UserPassesTestMixin, CreateView):
     model = Post
     template_name = 'post_form.html'
-    fields = ['category', 'title', 'text', 'admin', 'hashtags', 'photo', ]
+    fields = ['title_uz', 'title_en', 'text_uz', 'text_en','admin' ,'category', 'photo', 'slug']
     success_url = reverse_lazy('home')
 
-class PostUpdateView(UpdateView):
+    def form_valid(self, form):
+        # Agar foydalanuvchi title_en yoki text_en ni kiritmasa, avtomatik o‘zbek tilidan olish
+        if not form.instance.title_en:
+            form.instance.title_en = form.instance.title_uz
+        if not form.instance.text_en:
+            form.instance.text_en = form.instance.text_uz
+        cache.clear()
+
+        return super().form_valid(form)
+
+    def test_func(self):
+        return self.request.user.is_superuser
+
+class PostUpdateView(UserPassesTestMixin, UpdateView):
     model = Post
-    fields = ['title', 'text', 'comment_count', 'hashtags', 'photo', ]
+    fields = ['title_uz', 'title_en', 'text_uz', 'text_en' ,'category', 'photo', 'slug']
     template_name = 'post_form.html'
     success_url = reverse_lazy('home')
+    cache.clear()
 
+    def test_func(self):
+        return self.request.user.is_superuser
+
+class DeletePostView(UserPassesTestMixin,DeleteView):
+    model = Post
+    template_name = 'post_delete.html'
+    success_url = reverse_lazy('home')
+
+    def test_func(self):
+        return self.request.user.is_authenticated
+
+
+    def delete(self, request, *args, **kwargs):
+        response = super().delete(request, *args, **kwargs)
+        cache.clear()  # Cache ni tozalash
+        return response
+
+@method_decorator(cache_page(60 * 5), name='dispatch')
 class PostListByCategory(ListView):
     model = Post
     template_name = 'post_list.html'
@@ -89,6 +123,7 @@ class PostListByCategory(ListView):
     def get_queryset(self):
         return Post.objects.filter(category_id=self.kwargs['pk'])
 
+@method_decorator(cache_page(60 * 5), name='dispatch')
 class PostListByHashtag(ListView):
     model = Post
     template_name = 'post_list.html'
