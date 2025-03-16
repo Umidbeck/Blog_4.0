@@ -75,7 +75,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'blog.context_processors.global_context'  #base.html uchun model
+                'blog.context_processors.global_context',  #base.html uchun model
+                'blog.context_processors.site_info',
             ],
         },
     },
@@ -183,3 +184,7 @@ CKEDITOR_CONFIGS = {
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_RESTRICT_BY_USER = True
+
+# SEO uchun
+SITE_NAME = "Yangiliklar Sayti"
+SITE_DESCRIPTION = "Turli mavzudagi tezkor yangiliklar"
