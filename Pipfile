@@ -5,10 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
-pillow = "*"
 django-ckeditor = "*"
 django-modeltranslation = "*"
 django-compressor = "*"
+pillow = "*"
 
 [dev-packages]
 
