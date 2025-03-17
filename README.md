@@ -18,36 +18,3 @@ Backend: Django (Python)
 Database: SQLite
 Frontend: HTML, CSS, Bootstrap
 Caching: Django Cache Framework
-Installation & Setup
-Clone the repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/Umidbeck/Blog_4.0.git
-cd Blog_4.0
-Install dependencies:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Apply migrations:
-
-bash
-Copy
-Edit
-python manage.py migrate
-Create a superuser (admin):
-
-bash
-Copy
-Edit
-python manage.py createsuperuser
-Run the development server:
-
-bash
-Copy
-Edit
-python manage.py runserver
-Access the blog at http://127.0.0.1:8000/
