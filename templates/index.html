@@ -85,7 +85,7 @@
                               {% for tag in post.hashtags.all %}
                             <ul class="post-tags">
                               <li><i class="fa fa-tags"></i></li>
-                              <li><a href="#">{{ tag }}</a>,</li>
+                              <li><a href="{% url 'hashtag_posts' tag.id %}">{{ tag }}</a>,</li>
                             </ul>
                                   {% endfor %}
                           </div>
@@ -105,7 +105,7 @@
 
                 <div class="col-lg-12">
                   <div class="main-button">
-                    <a href="{% url 'blog' %}">View All Posts</a>
+                    <a href="{% url 'blog' %}">{% trans 'View All Posts' %}</a>
                   </div>
                 </div>
               </div>

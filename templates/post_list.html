@@ -66,7 +66,7 @@
                         <li><a href="#">{{ post.date|date:"F d, Y" }}</a></li>
                         <li><a href="#">{{ post.comments.count }}</a></li>
                       </ul>
-                      <p>Nullam nibh mi, tincidunt sed sapien ut, rutrum hendrerit velit. Integer auctor a mauris sit amet eleifend.</p>
+                      <p>{{ post.text | truncatewords:'50' | safe }}</p>
                       <div class="post-options">
                         <div class="row">
                           <div class="col-6">

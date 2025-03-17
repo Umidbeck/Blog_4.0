@@ -58,7 +58,7 @@ https://templatemo.com/tm-551-stand-blog
     <header class="">
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand" href="{% url 'home' %}"><h2>Stand Blog<em>.</em></h2></a>
+          <a class="navbar-brand" href="{% url 'home' %}"><h2>{% trans 'News Blog' %}<em>.</em></h2></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -70,16 +70,13 @@ https://templatemo.com/tm-551-stand-blog
                 </a>
               </li>
               <li class="nav-item active">
-                <a class="nav-link" href="{% url 'about' %}">About Us</a>
+                <a class="nav-link" href="{% url 'about' %}">{% trans 'About Us' %}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'blog' %}">Blog Entries</a>
+                <a class="nav-link" href="{% url 'blog' %}">{% trans 'Blog Entries' %}</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="post-details.html">Post Details</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'contact' %}">{% blocktrans %}Contact Us<{% endblocktrans %}/a>
+                <a class="nav-link" href="{% url 'contact' %}">{% trans 'Contact' %}</a>
               </li>
             <li class="nav-item">
                 <form action="{% url 'set_language' %}" method="post" class="d-flex align-items-center gap-2">
@@ -97,14 +94,14 @@ https://templatemo.com/tm-551-stand-blog
                         <a class="nav-link fw-bold text-primary" href="#">{{ user.username | title }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-danger px-3 py-1" href="{% url 'logout' %}">Logout</a>
+                        <a class="nav-link btn btn-outline-danger px-3 py-1" href="{% url 'logout' %}">{% trans 'Logout' %}</a>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link btn btn-outline-primary px-3 py-1 me-2" href="{% url 'login' %}">Login</a>
+                        <a class="nav-link btn btn-outline-primary px-3 py-1 me-2" href="{% url 'login' %}">{% trans 'Login' %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary px-3 py-1" href="{% url 'register' %}">Sign Up</a>
+                        <a class="nav-link btn btn-primary px-3 py-1" href="{% url 'register' %}">{% trans 'Sign Up' %}</a>
                     </li>
                 {% endif %}
             </ul>

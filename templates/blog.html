@@ -1,117 +1,109 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% load i18n %}
 
 {% block content %}
 
-    <!-- Page Content -->
-    <!-- Banner Starts Here -->
     <div class="heading-page header-text">
-      <section class="page-heading">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="text-content">
-                <h4>Recent Posts</h4>
-                <h2>Our Recent Blog Entries</h2>
-              </div>
+        <section class="page-heading">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="text-content">
+                            <h4>{% trans 'Recent Posts' %}</h4>
+                            <h2>{% trans 'Our Recent Blog Entries' %}</h2>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </section>
+        </section>
     </div>
-    
-    <!-- Banner Ends Here -->
-
-    <section class="call-to-action">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="main-content">
-              <div class="row">
-                <div class="col-lg-8">
-                  <span>Stand Blog HTML5 Template</span>
-                  <h4>Creative HTML Template For Bloggers!</h4>
-                </div>
-                <div class="col-lg-4">
-                  <div class="main-button">
-                    <a href="https://templatemo.com/tm-551-stand-blog" target="_parent">Download Now!</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
 
     <section class="blog-posts grid-system">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="all-blog-posts">
-              <div class="row">
-                  {% for post in posts %}
-                <div class="col-lg-6">
-                  <div class="blog-post">
-                    <div class="blog-thumb">
-                      <img src="{{ post.photo.url }}" alt="{{ post.title }}" class="post-image_3">
-                    </div>
-                    <div class="down-content">
-                      <span>Lifestyle</span>
-                      <a href="{% url 'post_detail' pk=post.pk %}"><h4>{{ post.title }}</h4></a>
-                      <ul class="post-info">
-                        <li><a href="#">{{ post.admin }}</a></li>
-                        <li><a href="#">{{ post.date|date:"F d, Y" }}</a></li>
-                        <li><a href="#">{{ post.comments.count }}</a></li>
-                      </ul>
-                      {{ post.text|truncatewords:20|safe }}
-                      <div class="post-options">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="all-blog-posts">
                         <div class="row">
-                          <div class="col-6">
-                              {% for tag in post.hashtags.all %}
-                            <ul class="post-tags">
-                              <li><i class="fa fa-tags"></i></li>
-                              <li><a href="{% url 'hashtag_posts' tag.id %}">{{ tag }}</a>,</li>
-                            </ul>
-                                  {% endfor %}
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                  {% endfor %}
-                <div class="col-lg-12">
-                    <ul class="page-numbers">
-                        {% if page_obj.has_previous %}
-                            <li><a href="?page=1">1</a></li> <!-- Birinchi sahifa -->
-                            <li><a href="?page={{ page_obj.previous_page_number }}"><i class="fa fa-angle-left"></i></a></li> <!-- Oldingi -->
-                        {% endif %}
+                            {% for post in posts %}
+                                <div class="col-lg-6">
+                                    <div class="blog-post">
+                                        <div class="blog-thumb">
+                                            <img src="{{ post.photo.url }}" alt="{{ post.title }}" class="post-image_3">
+                                        </div>
+                                        <div class="down-content">
+                                            <span>{{ post.category }}</span>
+                                            <a href="{% url 'post_detail' pk=post.pk %}">
+                                                <h4>{{ post.title }}</h4>
+                                            </a>
+                                            <ul class="post-info">
+                                                <li><a href="#">{{ post.admin }}</a></li>
+                                                <li><a href="#">{{ post.date|date:"F d, Y" }}</a></li>
+                                                <li><a href="#">{{ post.comments.count }}</a></li>
+                                            </ul>
+                                            {{ post.text|truncatewords:20|safe }}
 
-                        {% for num in page_obj.paginator.page_range %}
-                            {% if num == page_obj.number %}
-                                <li class="active"><a href="?page={{ num }}">{{ num }}</a></li> <!-- Hozirgi sahifa -->
-                            {% elif num > page_obj.number|add:-2 and num < page_obj.number|add:2 %}
-                                <li><a href="?page={{ num }}">{{ num }}</a></li> <!-- Yonidagi sahifalar -->
+                                            {% if post.hashtags.exists %}
+                                                <div class="post-options">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <ul class="post-tags">
+                                                                <li><i class="fa fa-tags"></i></li>
+                                                                {% for tag in post.hashtags.all %}
+                                                                    <li>
+                                                                        <a href="{% url 'hashtag_posts' tag.id %}">{{ tag }}</a>
+                                                                        {% if not forloop.last %}, {% endif %}
+                                                                    </li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% empty %}
+                                <p>{% trans 'No posts available' %}</p>
+                            {% endfor %}
+
+                            {% if page_obj %}
+                                <div class="col-lg-12">
+                                    <ul class="page-numbers">
+                                        {% if page_obj.has_previous %}
+                                            <li><a href="?page=1">1</a></li>
+                                            <li><a href="?page={{ page_obj.previous_page_number }}">
+                                                <i class="fa fa-angle-left"></i>
+                                            </a></li>
+                                        {% endif %}
+
+                                        {% for num in page_obj.paginator.page_range %}
+                                            {% if num == page_obj.number %}
+                                                <li class="active"><a href="?page={{ num }}">{{ num }}</a></li>
+                                            {% elif num > page_obj.number|add:-2 and num < page_obj.number|add:2 %}
+                                                <li><a href="?page={{ num }}">{{ num }}</a></li>
+                                            {% endif %}
+                                        {% endfor %}
+
+                                        {% if page_obj.has_next %}
+                                            <li><a href="?page={{ page_obj.next_page_number }}">
+                                                <i class="fa fa-angle-right"></i>
+                                            </a></li>
+                                            <li><a href="?page={{ page_obj.paginator.num_pages }}">
+                                                {{ page_obj.paginator.num_pages }}
+                                            </a></li>
+                                        {% endif %}
+                                    </ul>
+                                </div>
                             {% endif %}
-                        {% endfor %}
-
-                        {% if page_obj.has_next %}
-                            <li><a href="?page={{ page_obj.next_page_number }}"><i class="fa fa-angle-right"></i></a></li> <!-- Keyingi -->
-                            <li><a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li> <!-- Oxirgi sahifa -->
-                        {% endif %}
-                    </ul>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <div class="col-lg-4">
+                    {% include 'category_tag.html' %}
+                </div>
             </div>
-          </div>
-          <div class="col-lg-4">
-            {% include 'category_tag.html' %}
-          </div>
         </div>
-      </div>
     </section>
 
 {% endblock %}

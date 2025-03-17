@@ -9,6 +9,7 @@ django-ckeditor = "*"
 django-modeltranslation = "*"
 django-compressor = "*"
 pillow = "*"
+django-extensions = "*"
 
 [dev-packages]
 
