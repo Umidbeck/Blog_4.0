@@ -38,7 +38,6 @@ class BlogView(ListView):
     ordering = ['-date']
     paginate_by = 6
 
-@method_decorator(cache_page(60 * 5), name='dispatch')
 class PostDetailView(DetailView):
     model = Post
     template_name = 'post-details.html'
@@ -83,7 +82,7 @@ class PostCreateView(UserPassesTestMixin, CreateView):
             form.instance.title_en = form.instance.title_uz
         if not form.instance.text_en:
             form.instance.text_en = form.instance.text_uz
-        cache.clear()
+        cache.delete()
 
         return super().form_valid(form)
 

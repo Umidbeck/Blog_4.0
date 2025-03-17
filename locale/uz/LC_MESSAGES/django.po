@@ -9,50 +9,232 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-03-05 16:42+0500\n"
+"POT-Creation-Date: 2025-03-17 10:34+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language-Team: Uzbek <LL@li.org>\n"
+"Language: uz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: blog/models.py:24
-msgid "Title"
-msgstr "Mavzu"
-
-#: blog/models.py:25
-msgid "Text"
-msgstr "Matin"
-
-#: config/settings.py:129
+#: config/settings.py:143
 msgid "English"
-msgstr "Ingliz"
+msgstr "Inglizcha"
 
-#: config/settings.py:130
+#: config/settings.py:144
 msgid "Uzbek"
-msgstr "O'zbek"
+msgstr "O'zbekcha"
 
 #: config/urls.py:31
 msgid "accounts/"
-msgstr ""
+msgstr "hisoblar/"
 
 #: config/urls.py:32
 msgid "ckeditor/"
-msgstr ""
+msgstr "ckeditor/"
 
 #: config/urls.py:33
 msgid "admin/"
+msgstr "admin/"
+
+#: templates/about.html:14
+msgid "about us"
+msgstr "biz haqimizda"
+
+#: templates/about.html:15
+msgid "more about us!"
+msgstr "biz haqimizda batafsil!"
+
+#: templates/about.html:32
+msgid ""
+"Please tell your friends about TemplateMo website. Thank you. You can browse "
+"through different categories of templates such as "
+msgstr ""
+"Iltimos, TemplateMo veb-sayti haqida do'stlaringizga ayting. Rahmat. Siz "
+"turli xil shablonlar toifalarini ko'rib chiqishingiz mumkin, masalan "
+
+#: templates/about.html:38
+msgid "Two-One Donec porttitor augue"
+msgstr "Ikki-Bir Donec porttitor augue"
+
+#: templates/about.html:39 templates/about.html:50
+msgid ""
+"Quisque bibendum cursus viverra. Mauris at ex ipsum. Aenean condimentum urna "
+"nisl, eget interdum ante euismod vel. Aliquam at metus sit amet nunc dapibus "
+"posuere."
+msgstr ""
+"Quisque bibendum cursus viverra. Mauris at ex ipsum. Aenean condimentum urna "
+"nisl, eget interdum ante euismod vel. Aliquam at metus sit amet nunc dapibus "
+"posuere."
+
+#: templates/about.html:42
+msgid "Two-Two Donec porttitor augue"
+msgstr "Ikki-Ikki Donec porttitor augue"
+
+#: templates/about.html:43
+msgid ""
+">Maecenas et metus nisl. Morbi ac interdum metus. Aliquam erat volutpat. "
+"Donec posuere tortor vel volutpat consequat. Mauris sagittis magna vel "
+"tellus semper interdum et id sapien."
+msgstr ""
+"Maecenas et metus nisl. Morbi ac interdum metus. Aliquam erat volutpat. "
+"Donec posuere tortor vel volutpat consequat. Mauris sagittis magna vel "
+"tellus semper interdum et id sapien."
+
+#: templates/about.html:49
+msgid "1-03 Donec porttitor augue"
+msgstr "1-03 Donec porttitor augue"
+
+#: templates/about.html:53
+msgid "2-03 Donec porttitor augue"
+msgstr "2-03 Donec porttitor augue"
+
+#: templates/about.html:54 templates/about.html:58
+msgid ""
+"Maecenas et metus nisl. Morbi ac interdum metus. Aliquam erat volutpat. "
+"Donec posuere tortor vel volutpat consequat. Mauris sagittis magna vel "
+"tellus semper interdum et id sapien."
+msgstr ""
+"Maecenas et metus nisl. Morbi ac interdum metus. Aliquam erat volutpat. "
+"Donec posuere tortor vel volutpat consequat. Mauris sagittis magna vel "
+"tellus semper interdum et id sapien."
+
+#: templates/about.html:57
+msgid "3-03 Donec porttitor augue"
+msgstr "3-03 Donec porttitor augue"
+
+#: templates/about.html:62
+msgid ""
+"\n"
+"        <div class=\"row\">\n"
+"          <div class=\"col-lg-3 col-md-6\">\n"
+"          <h4>01 Four Columns</h4>\n"
+"          \t<p>Mauris at ex ipsum. Aenean condimentum urna nisl, eget "
+"interdum ante euismod vel. Aliquam at metus sit amet nunc dapibus posuere.</"
+"p>\n"
+"          </div>\n"
+"          <div class=\"col-lg-3 col-md-6\">\n"
+"          <h4>02 Four Columns</h4>\n"
+"          \t<p>Aliquam erat volutpat. Donec posuere tortor vel volutpat "
+"consequat. Mauris sagittis magna vel tellus semper interdum et id sapien.</"
+"p>\n"
+"          </div>\n"
+"          <div class=\"col-lg-3 col-md-6\">\n"
+"          <h4>03 Four Columns</h4>\n"
+"          \t<p>Morbi ac interdum metus. Donec posuere tortor vel volutpat "
+"consequat. Mauris sagittis magna vel tellus semper interdum et id sapien.</"
+"p>\n"
+"          </div>\n"
+"          <div class=\"col-lg-3 col-md-6\">\n"
+"          <h4>04 Four Columns</h4>\n"
+"          \t<p>Aliquam erat volutpat. Donec posuere tortor vel volutpat "
+"consequat. Mauris sagittis magna vel tellus semper interdum et id sapien.</"
+"p>\n"
+"          </div>\n"
+"        </div>\n"
+"        "
 msgstr ""
 
-#: templates/base.html:65
+#: templates/base.html:61
+msgid "News Blog"
+msgstr "Yangiliklar Blogi"
+
+#: templates/base.html:68
 msgid "Home"
-msgstr "Asosiy sahifa"
+msgstr "Bosh sahifa"
+
+#: templates/base.html:73
+msgid "About Us"
+msgstr "Biz haqimizda"
+
+#: templates/base.html:76
+msgid "Blog Entries"
+msgstr "Blog postlari"
 
 #: templates/base.html:79
-#, fuzzy
-#| msgid "Contact Us"
-msgid "Contact Us<"
+msgid "Post Details"
+msgstr "Post tafsilotlari"
+
+#: templates/base.html:82
+msgid "Contact"
 msgstr "Aloqa"
+
+#: templates/base.html:100
+msgid "Logout"
+msgstr "Chiqish"
+
+#: templates/base.html:104
+msgid "Login"
+msgstr "Kirish"
+
+#: templates/base.html:107
+msgid "Sign Up"
+msgstr "Ro'yxatdan o'tish"
+
+#: templates/blog.html:13 templates/category_tag.html:15
+msgid "Recent Posts"
+msgstr "So'nggi postlar"
+
+#: templates/blog.html:14
+msgid "Our Recent Blog Entries"
+msgstr "Bizning so'nggi blog yozuvlarimiz"
+
+#: templates/blog.html:67
+msgid "No posts available"
+msgstr "Hech qanday post mavjud emas"
+
+#: templates/category_tag.html:8
+msgid "Search"
+msgstr "Qidirish"
+
+#: templates/category_tag.html:32
+msgid "Categories"
+msgstr "Kategoriyalar"
+
+#: templates/category_tag.html:47
+msgid "Tag Clouds"
+msgstr "Teglar buluti"
+
+#: templates/contact.html:17
+msgid "contact us"
+msgstr "biz bilan bog'laning"
+
+#: templates/contact.html:18
+msgid "let’s stay in touch!"
+msgstr "aloqada qolaylik!"
+
+#: templates/contact.html:39
+msgid "Send us a message"
+msgstr "Bizga xabar yuboring"
+
+#: templates/contact.html:66
+msgid "Send Message"
+msgstr "Xabar yuborish"
+
+#: templates/contact.html:77
+msgid "contact information"
+msgstr "aloqa ma'lumotlari"
+
+#: templates/contact.html:83
+msgid "PHONE NUMBER"
+msgstr "TELEFON RAQAMI"
+
+#: templates/contact.html:87
+msgid "EMAIL ADDRESS"
+msgstr "EMAIL MANZIL"
+
+#: templates/contact.html:92
+msgid "STREET ADDRESS"
+msgstr "KO'CHA MANZILI"
+
+#: templates/index.html:108
+msgid "View All Posts"
+msgstr "Barcha postlarni ko'rish"
+
+#~ msgid "Title"
+#~ msgstr "Sarlavha"
+
+#~ msgid "Text"
+#~ msgstr "Matn"
